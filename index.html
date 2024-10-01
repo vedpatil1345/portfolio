@@ -5,46 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ved's Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            light: '#0EA5E9', // Vibrant blue
-                            dark: '#60A5FA',
-                        },
-                        secondary: {
-                            light: '#C67DEE', // Pastel pink
-                            dark: '#9735C5',
-                        },
-                        tertiary: {
-                            light: '#B392F7', // Soft purple
-                            dark: '#753D8B',
-                        },
-                        gray: {
-                            light: '#F7F7F7',
-                            dark: '#333333',
-                        },
-                        border: {
-                            light: '#C8C8C8',
-                            dark: '#565656',
-                        },
+         tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                colors: {
+                    primary: {
+                        light: '#0369A1', // Darker blue for better contrast
+                        dark: '#60A5FA',
+                    },
+                    secondary: {
+                        light: '#DB2777', // Darker pink for better contrast
+                        dark: '#9735C5',
+                    },
+                    tertiary: {
+                        light: '#7C3AED', // Darker purple for better contrast
+                        dark: '#753D8B',
+                    },
+                    gray: {
+                        light: '#F3F4F6',
+                        dark: '#333333',
+                    },
+                    border: {
+                        light: '#D1D5DB',
+                        dark: '#565656',
+                    },
+                    background: {
+                        light: '#E5E7EB', // Slightly darker background for contrast
+                        dark: '#1F2937',
                     },
                 },
+                boxShadow: {
+                    'custom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                },
             },
-        }
+        },
+    }
     </script>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-    <nav id="nav" class="bg-primary-light dark:bg-gray-800 p-4 sticky top-0 z-10">
+<body class="bg-background-light dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <nav id="nav" class="bg-primary-light dark:bg-gray-800 p-4 sticky top-0 z-10 shadow-md">
         <div class="container mx-auto flex flex-wrap justify-between items-center">
-            <div class="text-white font-bold text-xl">Ved's Portfolio</div>
+            <div class="text-white font-bold text-xl" onclick="goHome()">Ved's Portfolio</div>
             <button id="menu-toggle" class="lg:hidden text-white">
                 <i class="fas fa-bars"></i>
             </button>
@@ -64,20 +71,20 @@
         </div>
     </nav>
 
-    <section id="home" class="section home bg-gray-100 dark:bg-gray-800 py-20">
+    <section id="home" class="section home bg-background-light dark:bg-gray-800 py-20">
         <div class="container mx-auto text-center">
-            <img src="resource/img/profile.png" alt="Ved's profile" class="profile-img w-80 h-80 rounded-full mx-auto mb-8 border-4 border-secondary-light dark:border-secondary-dark">
+            <img src="resource/img/profile.png" alt="Ved's profile" class="profile-img w-80 h-80 rounded-full mx-auto mb-8 border-4 border-secondary-light dark:border-secondary-dark shadow-custom">
             <h1 class="text-4xl font-bold mb-4">Hello, I'm Ved</h1>
             <p class="text-xl mb-8">And I'm a <span class="home-intro text-primary-light dark:text-primary-dark"></span><span class="typed-cursor" aria-hidden="true"></span></p>
         </div>
     </section>
 
-    <section id="about" class="section about bg-white dark:bg-gray-700 py-20">
+    <section id="about" class="section about bg-white dark:bg-gray-700 py-20 shadow-md">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-12 text-center">About Me</h2>
             <div class="flex flex-col md:flex-row items-center justify-center">
                 <div class="md:w-1/2 mb-8 md:mb-0">
-                    <img src="resource/img/about-image.jpg" alt="Ved working" class="rounded-lg shadow-lg max-w-full h-auto">
+                    <img src="resource/img/about-image.jpg" alt="Ved working" class="rounded-lg shadow-custom max-w-full h-auto">
                 </div>
                 <div class="md:w-1/2 md:pl-12">
                     <p class="text-lg mb-6 leading-relaxed">
@@ -95,18 +102,18 @@
                         projects, or enjoying outdoor activities to maintain a healthy work-life balance.
                     </p>
                     <div class="mt-8">
-                        <a onclick="goContact()" class="bg-primary-light dark:bg-primary-dark text-white py-2 px-4 rounded hover:opacity-80 transition-opacity inline-block">Get in Touch</a>
+                        <a onclick="goContact()" class="bg-primary-light dark:bg-primary-dark text-white py-2 px-4 rounded hover:opacity-80 transition-opacity inline-block shadow-custom">Get in Touch</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="section skills bg-gray-100 dark:bg-gray-800 py-20">
+    <section id="skills" class="section skills bg-background-light dark:bg-gray-800 py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow border border-gray-200 dark:border-gray-600">
+                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow-custom border border-gray-200 dark:border-gray-600">
                     <h3 class="font-bold mb-2">Languages</h3>
                     <ul class="list-disc list-inside">
                         <li>JavaScript</li>
@@ -115,7 +122,7 @@
                         <li>C++</li>
                     </ul>
                 </div>
-                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow border border-gray-200 dark:border-gray-600">
+                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow-custom border border-gray-200 dark:border-gray-600">
                     <h3 class="font-bold mb-2">Web Technologies</h3>
                     <ul class="list-disc list-inside">
                         <li>HTML5</li>
@@ -124,7 +131,7 @@
                         <li>Node.js</li>
                     </ul>
                 </div>
-                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow border border-gray-200 dark:border-gray-600">
+                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow-custom border border-gray-200 dark:border-gray-600">
                     <h3 class="font-bold mb-2">Databases</h3>
                     <ul class="list-disc list-inside">
                         <li>MySQL</li>
@@ -132,7 +139,7 @@
                         <li>PostgreSQL</li>
                     </ul>
                 </div>
-                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow border border-gray-200 dark:border-gray-600">
+                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow-custom border border-gray-200 dark:border-gray-600">
                     <h3 class="font-bold mb-2">Tools</h3>
                     <ul class="list-disc list-inside">
                         <li>Git</li>
@@ -145,11 +152,11 @@
         </div>
     </section>
 
-    <section id="experience" class="section experience bg-white dark:bg-gray-700 py-20">
+    <section id="experience" class="section experience bg-white dark:bg-gray-700 py-20 shadow-md">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8 text-center">Experience</h2>
             <div class="space-y-8">
-                <div class="bg-gray-100 dark:bg-gray-600 p-6 rounded shadow">
+                <div class="bg-background-light dark:bg-gray-600 p-6 rounded shadow-custom">
                     <h3 class="text-xl font-bold mb-2">Senior Software Developer</h3>
                     <p class="text-gray-600 dark:text-gray-300 mb-2">TechCorp Inc. | 2020 - Present</p>
                     <ul class="list-disc list-inside">
@@ -158,7 +165,7 @@
                         <li>Mentored junior developers and conducted code reviews</li>
                     </ul>
                 </div>
-                <div class="bg-gray-100 dark:bg-gray-600 p-6 rounded shadow">
+                <div class="bg-background-light dark:bg-gray-600 p-6 rounded shadow-custom">
                     <h3 class="text-xl font-bold mb-2">Full Stack Developer</h3>
                     <p class="text-gray-600 dark:text-gray-300 mb-2">WebSolutions Co. | 2017 - 2020</p>
                     <ul class="list-disc list-inside">
@@ -171,21 +178,21 @@
         </div>
     </section>
 
-    <section id="projects" class="section projects bg-gray-100 dark:bg-gray-800 py-20">
+    <section id="projects" class="section projects bg-background-light dark:bg-gray-800 py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-gray-700 p-6 rounded shadow">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded shadow-custom">
                     <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
                     <p class="mb-4">A fully functional e-commerce website with user authentication, product catalog, and payment integration.</p>
                     <p class="text-sm text-gray-600 dark:text-gray-300">Technologies: React, Node.js, MongoDB, Stripe</p>
                 </div>
-                <div class="bg-white dark:bg-gray-700 p-6 rounded shadow">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded shadow-custom">
                     <h3 class="text-xl font-bold mb-2">Task Management App</h3>
                     <p class="mb-4">A collaborative task management application with real-time updates and team features.</p>
                     <p class="text-sm text-gray-600 dark:text-gray-300">Technologies: Vue.js, Firebase, Vuex</p>
                 </div>
-                <div class="bg-white dark:bg-gray-700 p-6 rounded shadow">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded shadow-custom">
                     <h3 class="text-xl font-bold mb-2">Weather Forecast API</h3>
                     <p class="mb-4">A RESTful API that provides accurate weather forecasts based on location data.</p>
                     <p class="text-sm text-gray-600 dark:text-gray-300">Technologies: Python, Flask, OpenWeatherMap API</p>
@@ -194,7 +201,7 @@
         </div>
     </section>
 
-    <section id="github" class="section github bg-white dark:bg-gray-700 py-20">
+    <section id="github" class="section github bg-white dark:bg-gray-700 py-20 shadow-md">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8 text-center">GitHub Activity</h2>
             <div id="profile" class="mb-8"></div>
@@ -202,27 +209,33 @@
         </div>
     </section>
 
-    <section id="contact" class="section contact bg-gray-100 dark:bg-gray-800 py-20">
+    <section id="contact" class="section contact bg-background-light dark:bg-gray-800 py-20">
         <div class="container mx-auto text-center px-4">
             <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
             <div class="flex justify-center space-x-4 mb-8">
-                <a  class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('https://wa.me/qr/NJRUCNV5GPXJK1')"><i class="fab fa-whatsapp text-4xl"></i></a>
-                <a  class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('https://github.com/vedpatil1345')"><i class="fab fa-github text-4xl"></i></a>
-                <a  class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('https://www.linkedin.com/in/ved-patil-a71968250/')"><i class="fab fa-linkedin text-4xl"></i></a>
-                <a  class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('mailto:vedpatil1345@gmail.com')"><i class="far fa-envelope text-4xl"></i></a>
+                <a class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('https://wa.me/qr/NJRUCNV5GPXJK1')"><i class="fab fa-whatsapp text-4xl"></i></a>
+                <a class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('https://github.com/vedpatil1345')"><i class="fab fa-github text-4xl"></i></a>
+                <a class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('https://www.linkedin.com/in/ved-patil-a71968250/')"><i class="fab fa-linkedin text-4xl"></i></a>
+                <a class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('mailto:vedpatil1345@gmail.com')"><i class="far fa-envelope text-4xl"></i></a>
             </div>
             <form id="contact-form" class="max-w-md mx-auto">
-                <input id="name" type="text" placeholder="Your Name" class=" w-full mb-4 p-2 border rounded border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" required>
-                <input id="email" type="email" placeholder="Your Email" class=" w-full mb-4 p-2 border rounded border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" required>
-                <textarea id="message" placeholder="Your Message" class="  w-full mb-4 p-2 border rounded border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" rows="4" required></textarea>
-                <button id="submit-button" type="submit" class="bg-primary-light  dark:bg-primary-dark text-white py-2 px-4 rounded hover:opacity-80 transition-opacity">Send Message</button>
+                <input id="name" type="text" placeholder="Your Name" class="w-full mb-4 p-2 border rounded border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 shadow-custom" required>
+                <input id="email" type="email" placeholder="Your Email" class="w-full mb-4 p-2 border rounded border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 shadow-custom" required>
+                <textarea id="message" placeholder="Your Message" class="w-full mb-4 p-2 border rounded border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 shadow-custom" rows="4" required></textarea>
+                <button id="submit-button" type="submit" class="bg-primary-light dark:bg-primary-dark text-white py-2 px-4 rounded hover:opacity-80 transition-opacity shadow-custom">Send Message</button>
             </form>
             <div id="form-status" class="mt-4"></div>
         </div>
     </section>
 
+    <footer class="bg-primary-light dark:bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Ved's Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./main.js"></script>
     <script>
         // Theme toggle functionality
         const themeToggleBtn = document.getElementById('theme-toggle');
@@ -247,6 +260,24 @@
 
         menuToggle.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Typed.js initialization
+        var typed = new Typed('.home-intro', {
+            strings: ['Web Developer', 'Software Engineer', 'Problem Solver'],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true
         });
     </script>
 </body>
