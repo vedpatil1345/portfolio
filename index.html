@@ -1,38 +1,253 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Ved Patil</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ved's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#0EA5E9', // Vibrant blue
+                            dark: '#60A5FA',
+                        },
+                        secondary: {
+                            light: '#C67DEE', // Pastel pink
+                            dark: '#9735C5',
+                        },
+                        tertiary: {
+                            light: '#B392F7', // Soft purple
+                            dark: '#753D8B',
+                        },
+                        gray: {
+                            light: '#F7F7F7',
+                            dark: '#333333',
+                        },
+                        border: {
+                            light: '#C8C8C8',
+                            dark: '#565656',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
 </head>
-<body>
-    <div class="navbar" id="nav">
-        <div class="txt" onclick="goHome()">Home</div>
-        <div class="txt" onclick="goAbout()">About</div>
-        <div class="txt" onclick="goSkills()">Skills</div>
-        <div class="txt" onclick="goExperience()">Experience</div>
-        <div class="txt" onclick="window.open('projects.html','_self')">Projects</div>
-        <div class="txt" onclick="goContact()">Contact Me</div>
-    </div>
-    <section class="home" id="home">
-        <br><br>
-        <img class="profile-img" src="resource/img/Picsart_24-07-13_18-35-58-318.png" alt="">
-        <h1>Hello, I'm Ved</h1>
-        <h3>And I'm a <span class="home-intro"></span><span class="typed-cursor" aria-hidden="true"></span></h3>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <nav id="nav" class="bg-primary-light dark:bg-gray-800 p-4 sticky top-0 z-10">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+            <div class="text-white font-bold text-xl">Ved's Portfolio</div>
+            <button id="menu-toggle" class="lg:hidden text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div id="menu" class="hidden lg:flex w-full lg:w-auto mt-4 lg:mt-0 space-y-2 lg:space-y-0 lg:space-x-4">
+                <button onclick="goHome()" class="block lg:inline-block text-white hover:text-gray-200">Home</button>
+                <button onclick="goAbout()" class="block lg:inline-block text-white hover:text-gray-200">About</button>
+                <button onclick="goSkills()" class="block lg:inline-block text-white hover:text-gray-200">Skills</button>
+                <button onclick="goExperience()" class="block lg:inline-block text-white hover:text-gray-200">Experience</button>
+                <button onclick="goProjects()" class="block lg:inline-block text-white hover:text-gray-200">Projects</button>
+                <button onclick="goGithub()" class="block lg:inline-block text-white hover:text-gray-200">GitHub</button>
+                <button onclick="goContact()" class="block lg:inline-block text-white hover:text-gray-200">Contact Me</button>
+                <button id="theme-toggle" class="text-white ml-4">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="section home bg-gray-100 dark:bg-gray-800 py-20">
+        <div class="container mx-auto text-center">
+            <img src="resource/img/profile.png" alt="Ved's profile" class="profile-img w-80 h-80 rounded-full mx-auto mb-8 border-4 border-secondary-light dark:border-secondary-dark">
+            <h1 class="text-4xl font-bold mb-4">Hello, I'm Ved</h1>
+            <p class="text-xl mb-8">And I'm a <span class="home-intro text-primary-light dark:text-primary-dark"></span><span class="typed-cursor" aria-hidden="true"></span></p>
+        </div>
     </section>
-    <section id="about">
-        <h2>About</h2>
-        <p>About content...</p>
+
+    <section id="about" class="section about bg-white dark:bg-gray-700 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="resource/img/about-image.jpg" alt="Ved working" class="rounded-lg shadow-lg max-w-full h-auto">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <p class="text-lg mb-6 leading-relaxed">
+                        I'm a passionate software developer with a keen interest in creating innovative solutions. 
+                        With a strong foundation in various programming languages and technologies, I strive to 
+                        build efficient and user-friendly applications that make a difference.
+                    </p>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        My journey in tech began with a fascination for problem-solving and has evolved into a 
+                        career filled with exciting challenges and continuous learning. I believe in the power 
+                        of technology to transform lives and businesses.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        When I'm not coding, you can find me exploring new technologies, contributing to open-source 
+                        projects, or enjoying outdoor activities to maintain a healthy work-life balance.
+                    </p>
+                    <div class="mt-8">
+                        <a onclick="goContact()" class="bg-primary-light dark:bg-primary-dark text-white py-2 px-4 rounded hover:opacity-80 transition-opacity inline-block">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <p>Skills content...</p>
+
+    <section id="skills" class="section skills bg-gray-100 dark:bg-gray-800 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow border border-gray-200 dark:border-gray-600">
+                    <h3 class="font-bold mb-2">Languages</h3>
+                    <ul class="list-disc list-inside">
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow border border-gray-200 dark:border-gray-600">
+                    <h3 class="font-bold mb-2">Web Technologies</h3>
+                    <ul class="list-disc list-inside">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow border border-gray-200 dark:border-gray-600">
+                    <h3 class="font-bold mb-2">Databases</h3>
+                    <ul class="list-disc list-inside">
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-4 rounded shadow border border-gray-200 dark:border-gray-600">
+                    <h3 class="font-bold mb-2">Tools</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Git</li>
+                        <li>Docker</li>
+                        <li>AWS</li>
+                        <li>Jira</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>Experience content...</p>
+
+    <section id="experience" class="section experience bg-white dark:bg-gray-700 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Experience</h2>
+            <div class="space-y-8">
+                <div class="bg-gray-100 dark:bg-gray-600 p-6 rounded shadow">
+                    <h3 class="text-xl font-bold mb-2">Senior Software Developer</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">TechCorp Inc. | 2020 - Present</p>
+                    <ul class="list-disc list-inside">
+                        <li>Led a team of 5 developers in creating a cloud-based inventory management system</li>
+                        <li>Implemented CI/CD pipelines, reducing deployment time by 40%</li>
+                        <li>Mentored junior developers and conducted code reviews</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-600 p-6 rounded shadow">
+                    <h3 class="text-xl font-bold mb-2">Full Stack Developer</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">WebSolutions Co. | 2017 - 2020</p>
+                    <ul class="list-disc list-inside">
+                        <li>Developed and maintained multiple client websites using React and Node.js</li>
+                        <li>Optimized database queries, improving application performance by 30%</li>
+                        <li>Collaborated with UX designers to implement responsive designs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
-    <script src="js/main.js"></script>
+
+    <section id="projects" class="section projects bg-gray-100 dark:bg-gray-800 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded shadow">
+                    <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                    <p class="mb-4">A fully functional e-commerce website with user authentication, product catalog, and payment integration.</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Technologies: React, Node.js, MongoDB, Stripe</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded shadow">
+                    <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                    <p class="mb-4">A collaborative task management application with real-time updates and team features.</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Technologies: Vue.js, Firebase, Vuex</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded shadow">
+                    <h3 class="text-xl font-bold mb-2">Weather Forecast API</h3>
+                    <p class="mb-4">A RESTful API that provides accurate weather forecasts based on location data.</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Technologies: Python, Flask, OpenWeatherMap API</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="github" class="section github bg-white dark:bg-gray-700 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">GitHub Activity</h2>
+            <div id="profile" class="mb-8"></div>
+            <div id="repositories" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact bg-gray-100 dark:bg-gray-800 py-20">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+            <div class="flex justify-center space-x-4 mb-8">
+                <a  class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('https://wa.me/qr/NJRUCNV5GPXJK1')"><i class="fab fa-whatsapp text-4xl"></i></a>
+                <a  class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('https://github.com/vedpatil1345')"><i class="fab fa-github text-4xl"></i></a>
+                <a  class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('https://www.linkedin.com/in/ved-patil-a71968250/')"><i class="fab fa-linkedin text-4xl"></i></a>
+                <a  class="text-primary-light dark:text-primary-dark hover:opacity-80" onclick="window.open('mailto:vedpatil1345@gmail.com')"><i class="far fa-envelope text-4xl"></i></a>
+            </div>
+            <form id="contact-form" class="max-w-md mx-auto">
+                <input id="name" type="text" placeholder="Your Name" class=" w-full mb-4 p-2 border rounded border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" required>
+                <input id="email" type="email" placeholder="Your Email" class=" w-full mb-4 p-2 border rounded border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" required>
+                <textarea id="message" placeholder="Your Message" class="  w-full mb-4 p-2 border rounded border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" rows="4" required></textarea>
+                <button id="submit-button" type="submit" class="bg-primary-light  dark:bg-primary-dark text-white py-2 px-4 rounded hover:opacity-80 transition-opacity">Send Message</button>
+            </form>
+            <div id="form-status" class="mt-4"></div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        // Theme toggle functionality
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Check for saved theme preference or prefer-color-scheme
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            htmlElement.classList.add('dark');
+        }
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
