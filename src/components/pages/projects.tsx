@@ -252,7 +252,7 @@ const Projects = () => {
         ) : (
           <div className="relative group">
             {/* Navigation Buttons */}
-            {showButtons && projectsData.length > 1 && (
+            {showButtons && projectsData.length > (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1) && (
               <>
                 <button
                   onClick={() => scroll('left')}

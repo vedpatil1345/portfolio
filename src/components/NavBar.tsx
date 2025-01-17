@@ -38,7 +38,7 @@ export const NavBar = memo(() => {
       const offsetTop = section.offsetTop - navbarHeight;
 
       window.scrollTo({
-        top: offsetTop,
+        top: offsetTop+24,
         behavior: 'smooth'
       });
 
