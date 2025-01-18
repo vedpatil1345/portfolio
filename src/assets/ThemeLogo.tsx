@@ -4,7 +4,7 @@ const ThemeLogo = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="inline h-16 w-auto px-[6vw]">
+    <div className="inline h-16 w-auto transition duration-300 ease-in-out transform hover:scale-125">
     <svg 
       version="1.1" 
       xmlns="http://www.w3.org/2000/svg" 

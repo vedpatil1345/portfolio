@@ -136,7 +136,7 @@ const Experience = () => {
             <>
               <button
                 onClick={() => scroll('left')}
-                className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-slate-800 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none`}
+                className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/20 dark:bg-slate-800/20 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none`}
                 aria-label="Scroll left"
               >
                 <svg
@@ -157,7 +157,7 @@ const Experience = () => {
               
               <button
                 onClick={() => scroll('right')}
-                className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-slate-800 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none`}
+                className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/20 dark:bg-slate-800/20 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none`}
                 aria-label="Scroll right"
               >
                 <svg

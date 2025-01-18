@@ -133,7 +133,7 @@ export const NavBar = memo(() => {
       aria-label="Main Navigation">
       <div className="mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center transition duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg hover:shadow-indigo-400/20">
+          <div className="flex items-center px-[6vw]">
             <NavLink to="/" className="flex " onClick={(e) => handleNavClick(e, 'home')}>
               <ThemeLogo/>
             </NavLink>
