@@ -9,6 +9,7 @@ const ContactPage = lazy(() => import("./components/pages/contact"))
 const Skills = lazy(() => import("./components/pages/skills"))
 const Experience = lazy(() => import("./components/pages/experience"))
 const Projects = lazy(() => import("./components/pages/projects"))
+const Achievements = lazy(() => import("./components/pages/achievements"))
 
 // Loading fallback component
 const LoadingSpinner = () => (
@@ -35,6 +36,9 @@ function App() {
             </section>
             <section id="projects" className="flex flex-col min-h-fit">
               <Projects/>
+            </section>
+            <section id="achievements" className="flex flex-col min-h-fit">
+              <Achievements/>
             </section>
             <section id="contact" className="flex flex-col min-h-fit">
               <ContactPage />

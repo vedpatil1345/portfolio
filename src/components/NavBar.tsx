@@ -20,6 +20,7 @@ const SECTIONS: string[] = [
   "skills",
   "experience",
   "projects",
+  "achievements",
   "contact",
 ];
 
