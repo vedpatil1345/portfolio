@@ -73,7 +73,7 @@ export const Home = () => {
             </h3>
             <p className="text-slate-700 dark:text-slate-300 text-md md:text-xl max-w-2xl leading-relaxed">
             I'm a computer engineering student at Madhuben and Bhanubhai Patel Institute of Technology, pursuing a BTech (September 2022 – July 2026). 
-  I'm currently proficient in Python, Java, and C/C++, with experience in cloud platforms, databases, Git, and Docker. 
+  I'm currently proficient in Python, JavaSript, Java, and C/C++, with experience in cloud platforms, databases, Git, and Docker. 
   I have a strong interest in Generative AI, backend development, and web technologies, and I'm passionate about building scalable, AI-driven systems.
             </p>
             <ContactButton />
