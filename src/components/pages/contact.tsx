@@ -60,10 +60,10 @@ const ContactPage: React.FC = () => {
     <div className="bg-transparent flex items-center justify-center">
       <Card className="max-w-2xl w-full bg-transparent border-none">
         <CardHeader className="text-center">
-          <div className="flex justify-center mb-4 gap-4">
+          <div className="flex justify-center mb-2 gap-4">
 
             <Mail onClick={()=>{window.open("mailto:vedpatil13045@gmail.com","_blank")}} 
-            className="rounded-full p-2 h-16 w-16 text-slate-300 dark:text-indigo-900 fill-indigo-600 dark:fill-indigo-400 transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg dark:shadow-indigo-400/50" />
+            className="rounded-full p-2 h-12 w-12 text-slate-300 dark:text-indigo-900 fill-indigo-600 dark:fill-indigo-400 transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg dark:shadow-indigo-400/50" />
             <div
               className="p-2 rounded-full inline-block text-xs font-medium uppercase leading-normal text-indigo-600 dark:text-indigo-400 transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg dark:shadow-indigo-400/50"
               title="GitHub"
@@ -72,7 +72,7 @@ const ContactPage: React.FC = () => {
             >
               <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-12 w-12"
+            className="h-8 w-8"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -87,7 +87,7 @@ const ContactPage: React.FC = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12"
+                className="h-8 w-8"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -102,7 +102,7 @@ const ContactPage: React.FC = () => {
             >
               <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-12 w-12"
+            className="h-8 w-8"
             fill="currentColor"
             viewBox="0 0 24 24"
           >

@@ -62,10 +62,14 @@ module.exports = {
   			}
   		},
   		keyframes: {
-			'rotate-border': {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
-        },
+  			'rotate-border': {
+  				'0%': {
+  					transform: 'rotate(0deg)'
+  				},
+  				'100%': {
+  					transform: 'rotate(360deg)'
+  				}
+  			},
   			'accordion-down': {
   				from: {
   					height: '0'
@@ -86,7 +90,7 @@ module.exports = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-			'rotate-border': 'rotate-border 5s linear infinite',
+  			'rotate-border': 'rotate-border 5s linear infinite'
   		}
   	}
   },

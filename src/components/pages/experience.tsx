@@ -16,7 +16,7 @@ const ExperienceCard = ({
   logoUrl 
 }: Experience) => (
   <div className="flex-shrink-0 w-[85vw] md:w-[48%] lg:w-[31%]">
-    <div className="relative flex flex-row gap-4 p-6 rounded-lg bg-white dark:bg-slate-800/50 backdrop-blur-sm border-2 border-indigo-600 dark:border-indigo-400 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-300 hover:scale-105 group h-full">
+    <div className="relative flex flex-row gap-4 p-6 rounded-lg bg-white dark:bg-slate-800/50 backdrop-blur-sm border-2 border-indigo-600 dark:border-indigo-400 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-300 group h-full">
       <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
       
       <div className="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-lg overflow-hidden bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center z-10">
@@ -52,7 +52,7 @@ const ExperienceCard = ({
 
 const Experience = () => {
   const [showButtons, setShowButtons] = useState(true);
-
+  const [scrollPosition, setScrollPosition] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const experiences: Experience[] = [
@@ -98,9 +98,8 @@ const Experience = () => {
 
   const handleScroll = useCallback(() => {
     if (scrollContainerRef.current) {
-
-
-      const { scrollWidth, clientWidth } = scrollContainerRef.current;
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setScrollPosition(scrollLeft);
       setShowButtons(scrollWidth > clientWidth);
     }
   }, []);
@@ -120,7 +119,7 @@ const Experience = () => {
   }, [handleScroll]);
 
   return (
-    <div className="w-full overflow-hidden px-4 sm:px-6 lg:px-8 py-16">
+    <div className="w-full overflow-hidden px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
           Professional Experience
@@ -131,12 +130,14 @@ const Experience = () => {
       </div>
       
       <div className="relative max-w-[1600px] mx-auto">
-        <div className="relative group">
+        <div className="relative">
           {showButtons && experiences.length > 1 && (
             <>
               <button
                 onClick={() => scroll('left')}
-                className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/20 dark:bg-slate-800/20 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none`}
+                className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/40 dark:bg-slate-800/40 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none ${
+                  scrollPosition <= 0 ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                }`}
                 aria-label="Scroll left"
               >
                 <svg
@@ -157,7 +158,12 @@ const Experience = () => {
               
               <button
                 onClick={() => scroll('right')}
-                className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/20 dark:bg-slate-800/20 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none`}
+                className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/40 dark:bg-slate-800/40 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none ${
+                  scrollContainerRef.current && 
+                  scrollPosition >= scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth - 1 
+                    ? 'opacity-0 pointer-events-none' 
+                    : 'opacity-100'
+                }`}
                 aria-label="Scroll right"
               >
                 <svg
@@ -182,7 +188,7 @@ const Experience = () => {
             ref={scrollContainerRef}
             className="overflow-x-auto scroll-smooth scrollbar-hide"
           >
-            <div className="flex space-x-8 pb-8 px-4 py-4">
+            <div className="flex space-x-8 pb-8 px-4">
               {experiences.map((experience, index) => (
                 <ExperienceCard key={index} {...experience} />
               ))}

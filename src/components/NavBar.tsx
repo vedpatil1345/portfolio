@@ -177,7 +177,7 @@ export const NavBar = memo(() => {
         {/* Mobile Navigation */}
         <div
           id="mobileMenu"
-          className={`lg:hidden fixed top-16 right-0 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-900 transform transition-transform duration-300 ease-in-out shadow-lg border-l border-gray-200 dark:border-gray-800 ${
+          className={`rounded-lg lg:hidden fixed top-16 right-0 h-fit w-fit bg-white/90 dark:bg-gray-900/90 transform transition-transform duration-300 ease-in-out shadow-lg border-l border-gray-200 dark:border-gray-800 ${
             state.isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
