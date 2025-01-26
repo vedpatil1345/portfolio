@@ -28,7 +28,7 @@ function App() {
       <GradientBackground className="min-h-screen overflow-auto flex flex-col font-mono">
         <div className="bg-gray-400/30 dark:bg-blue-950/30">
           {sections.map(({ id, Component }) => (
-            <section key={id} id={id} className={`flex flex-col lg:min-h-screen ${id=='home'?'mt-5 pt-5':'mt-16 pt-16'} lg:pt-12`}>
+            <section key={id} id={id} className={`flex flex-col lg:min-h-screen ${id=='home'?'mt-5 pt-5':'mt-10 py-12'} lg:pt-12`}>
               <Suspense fallback={<LoadingSpinner />}>
                 <AnimatedSection>
                   <Component />
