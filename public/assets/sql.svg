@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+<title>Sql data base with logo</title>
+<defs>
+<style type="text/css">
+#black {
+  fill:#333;
+}
+@media (prefers-color-scheme:dark) {
+    #black {
+        fill: white;
+    }
+} 	
+</style>
+</defs>
+
+<ellipse cx="120" cy="50" ry="35"  rx="85" style="fill:none; stroke:#df6c20;stroke-width:15" /> 
+<path d="m35,50 v150  a 85,35 1 1 0 170,0 v-150 m-170,50  a 85,35 1 1 0 170,0 m-170,50 a 85,35 1 1 0 170,0" style="fill:none; stroke:#df6c20;stroke-width:15" /> 
+</svg>

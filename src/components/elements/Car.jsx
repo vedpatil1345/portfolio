@@ -1,0 +1,302 @@
+import React from "react";
+import { useGLTF } from "@react-three/drei";
+import { Environment, Grid } from "@react-three/drei";
+
+export function Car(props) {
+  const { nodes, materials } = useGLTF("/models/Car/scene.gltf");
+  return (
+    <group {...props} dispose={null}>
+      {/* Add a simple environment */}
+      {/* Your existing car model */}
+      <group scale={0.01}>
+        <group
+          position={[485.415, -6.501, -6.882]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={115.84}
+        >
+          <group
+            position={[0.176, -1.218, 0.601]}
+            rotation={[0, Math.PI / 2, 0]}
+            scale={1.864}
+          >
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tyresCylinder_metalblack_0.geometry}
+              material={materials["metal.black"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tyresCylinder_lamborghini_0.geometry}
+              material={materials.lamborghini}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tyresCylinder_metalbrass_0.geometry}
+              material={materials["metal.brass"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tyresCylinder_Material003_0.geometry}
+              material={materials["Material.003"]}
+            />
+          </group>
+          <group position={[1.753, 0.091, 0.606]} scale={1.864}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires_metalblack_0.geometry}
+              material={materials["metal.black"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires_tyre_0.geometry}
+              material={materials.tyre}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires_lamborghini_0.geometry}
+              material={materials.lamborghini}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires_metalbrass_0.geometry}
+              material={materials["metal.brass"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires_Material008_0.geometry}
+              material={materials["Material.008"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires_Material010_0.geometry}
+              material={materials["Material.010"]}
+            />
+          </group>
+          <group position={[0.963, 0.074, 0.964]} scale={1.864}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.mainPart_carPaint_color_0.geometry}
+              material={materials.carPaint_color}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.mainPart_carPaint_color_0_1.geometry}
+              material={materials.carPaint_color}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.mainPart_carPaintblack_0.geometry}
+              material={materials["carPaint.black"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.mainPart_blackPlastic_0.geometry}
+              material={materials.blackPlastic}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.mainPart_Windows_0.geometry}
+              material={materials.Windows}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.mainPart_strippedBlackPlastic_0.geometry}
+              material={materials.strippedBlackPlastic}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.mainPart_gum_0.geometry}
+              material={materials.material}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.mainPart_White_0.geometry}
+              material={materials.White}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.mainPart_Metal_0.geometry}
+              material={materials.Metal}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.mainPart_translucentBlackPlastic_0.geometry}
+              material={materials.translucentBlackPlastic}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.mainPart_backLights_0.geometry}
+              material={materials.backLights}
+            />
+          </group>
+          <group position={[1.216, -3.597, 0.521]} scale={1.864}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.headLights_Material002_0.geometry}
+              material={materials["Material.002"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.headLights_blackPlastic_0.geometry}
+              material={materials.blackPlastic}
+            />
+          </group>
+          <group position={[0.484, -1.791, 0.669]} scale={1.864}>
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BackLIghts_blackPlastic_0.geometry}
+              material={materials.blackPlastic}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BackLIghts_backLights_0.geometry}
+              material={materials.backLights}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BackLIghts_strippedBlackPlastic_0.geometry}
+              material={materials.strippedBlackPlastic}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BackLIghts_blackMetal_0.geometry}
+              material={materials.blackMetal}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BackLIghts_chrome_0.geometry}
+              material={materials.chrome}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BackLIghts_Material007_0.geometry}
+              material={materials["Material.007"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BackLIghts_Orange_0.geometry}
+              material={materials.Orange}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BackLIghts_Windows_0.geometry}
+              material={materials.Windows}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BackLIghts_green_0.geometry}
+              material={materials.green}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BackLIghts_Material005_0.geometry}
+              material={materials["Material.005"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.BackLIghts_red_0.geometry}
+              material={materials.material_25}
+            />
+          </group>
+          <group
+            position={[-1.71, -2.399, 0.583]}
+            rotation={[0, 0, 0.306]}
+            scale={1.864}
+          >
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires002_metalblack_0.geometry}
+              material={materials["metal.black"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires002_tyre_0.geometry}
+              material={materials.tyre}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires002_lamborghini_0.geometry}
+              material={materials.lamborghini}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires002_Material011_0.geometry}
+              material={materials["Material.011"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires002_Material001_0.geometry}
+              material={materials["Material.001"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.tires002_Material009_0.geometry}
+              material={materials["Material.009"]}
+            />
+          </group>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.lamborghini_lamborghini_0.geometry}
+            material={materials.lamborghini}
+            position={[0, -4.111, 0.608]}
+            rotation={[Math.PI / 2, 0, 0]}
+            scale={1.864}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle041_frontFenceMetal_0.geometry}
+            material={materials.frontFenceMetal}
+            position={[0.305, -3.661, 0.236]}
+            scale={1.864}
+          />
+        </group>
+
+        {/* Removed the large plane from the original scene */}
+      </group>
+    </group>
+  );
+}
+
+useGLTF.preload("/models/Car/scene.gltf");
