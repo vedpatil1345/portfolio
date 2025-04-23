@@ -1,16 +1,16 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 227 227">
   <style>
     .logo-path {
-      fill: var(--theme-logo-color, #121313);
+      fill: var(--theme-logo-color, #000000);
     }
     @media (prefers-color-scheme: dark) {
       .logo-path {
-        fill: var(--theme-logo-color, #EDEDEF);
+        fill: var(--theme-logo-color, #ffffff);
       }
     }
   </style>
 
-  <path class="logo-path" opacity="1.000000" stroke="none" 
+  <pathclass="logo-path" opacity="1.000000" stroke="none" 
     d="M116.752678,161.855072 
     C110.250153,173.262115 103.924805,184.349014 97.079620,196.347076 
     C92.325706,188.041992 88.352760,180.395157 83.680107,173.202896 

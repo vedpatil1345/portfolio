@@ -1,10 +1,40 @@
-import React from "react";
-import { useGLTF } from "@react-three/drei";
+import React, { useRef, useEffect } from "react";
+import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
+import { SkeletonUtils } from 'three-stdlib';
 
-export function Model(props) {
-  const { nodes, materials } = useGLTF("/Ved.glb");
+export function Ved({ animationName = 'idle', ...props }) {
+  const group = useRef();
+
+  const { scene } = useGLTF('/models/Ved.glb');
+  const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
+  const { nodes, materials } = useGLTF("/models/Ved.glb");
+  
+  const { animations: idleAnimation } = useFBX('/models/idle.fbx');
+  const { animations: saluteAnimation } = useFBX('/models/salute.fbx');
+  const { animations: clappingAnimation } = useFBX('/models/clapping.fbx');
+  const { animations: victoryAnimation } = useFBX('/models/victory.fbx');
+  
+  // Name the animations
+  idleAnimation[0].name = 'idle';
+  saluteAnimation[0].name = 'salute';
+  clappingAnimation[0].name = 'clapping';
+  victoryAnimation[0].name = 'victory';
+
+  const { actions } = useAnimations(
+    [idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]],
+    group
+  );
+
+  // Play the selected animation
+  useEffect(() => {
+    if (actions[animationName]) {
+      actions[animationName].reset().fadeIn(0.5).play();
+      return () => actions[animationName].fadeOut(0.5);
+    }
+  }, [actions, animationName,clone]);
+
   return (
-    <group {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null}>
       <primitive object={nodes.Hips} />
       <skinnedMesh
         name="EyeLeft"
@@ -72,4 +102,5 @@ export function Model(props) {
   );
 }
 
-useGLTF.preload("/Ved.glb");
+// Preload the model
+useGLTF.preload("/models/Ved.glb");

@@ -1,11 +1,11 @@
 const ThemeLogo = () => {
   return (
-    <div className="inline transition duration-300 ease-in-out transform hover:scale-125 bg-transparent">
+    <div className="inline transition duration-300 ease-in-out transform hover:scale-125 bg-transparent ">
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 227 227"
-        className="w-12 h-12"
+        className="w-14 h-14"
       >
         <path
           fill="currentColor"

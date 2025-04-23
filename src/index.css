@@ -3,7 +3,38 @@
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
-
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+  to {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+}
+.animate-spin{
+  animation: spin-reverse 30s linear infinite;
+  -webkit-animation: spin-reverse 30s linear infinite;
+}
+.animate-spin-slow {
+  animation: spin 30s linear infinite;
+  -webkit-animation: spin 30s linear infinite;
+}
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -161,3 +192,10 @@
     transform: rotate(0deg);
   }
 }
+.scrollbar-hide::-webkit-scrollbar {
+  -webkit-scrollbar-color: rgb(63, 76, 160) rgba(255, 255, 255, 0);
+  scrollbar-color: rgb(63, 76, 160) rgba(255, 255, 255, 0);
+ 
+  scrollbar-width: thin;
+  -webkit-scrollbar-width: thin;}
+  
